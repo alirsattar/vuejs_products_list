@@ -1,13 +1,15 @@
 <template>
   <div class="product" @click="updateSelectedProduct">
-    <img :src="getProductImgSrc" alt="">
-    <span class="item-name">{{product.ItemName}}</span>
+    <a href="#selected-product">
+      <img :src="getProductImgSrc" alt="">
+      <span class="item-name">{{product.ItemName}}</span>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SingleProduct",
+  name: "ProductThumbnail",
   props: {
     product: {
       ItemId: Number,

@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+    
     <div id="product-list">
       <h1>Product List</h1>
       <div id="item-list">
-        <SingleProduct
+        <ProductThumbnail
           v-for="item of products"
           v-bind:key="item.ItemName"
           v-bind:product="item"
@@ -11,17 +12,11 @@
         />
       </div>
     </div>
-    <div id="detail-view">
-      <h1>Detail View</h1>
-      <div id="selected-product">
-        <div v-if="selectedProduct">
-          {{selectedProduct.ItemName}}
-        </div>
-        <div v-else>
-          <span>NO SELECTED PRODUCT</span>
-        </div>
-      </div>
-    </div>
+    
+    <ProductDetail
+      v-bind:product="selectedProduct"
+    />
+  
     <div id="sales-rep-info">
       <hr>
       <span>{{salesRep.SalesRepID}}</span>
@@ -30,7 +25,9 @@
 </template>
 
 <script>
-import SingleProduct from "./components/SingleProduct";
+import ProductThumbnail from "./components/ProductThumbnail";
+import ProductDetail from "./components/ProductDetail";
+
 import fetchedProducts from "./assets/products.json";
 
 export default {
@@ -45,7 +42,8 @@ export default {
     };
   },
   components: {
-    SingleProduct
+    ProductThumbnail,
+    ProductDetail
   },
   methods: {
     select(item) {
@@ -65,7 +63,6 @@ export default {
 
 #product-list {
   width: 70%;
-  /* display: flex; */
   float: left;
 }
 
@@ -83,7 +80,7 @@ export default {
   text-align: center;
 }
 
-#detail-view {
+#selected-product {
   float: right;
   width: 30%;
 }
