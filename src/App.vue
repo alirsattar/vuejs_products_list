@@ -1,30 +1,31 @@
 <template>
   <div id="app">
-    
-    <SingleProduct v-bind:productList="products" />
+    <div id="product-list" v-for="item of products" v-bind:key="item.ItemName">
+      <SingleProduct v-bind:product="item" />
+    </div>
 
     <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import SingleProduct from "./components/ListView";
+import SingleProduct from "./components/SingleProduct";
 import fetchedProducts from "./assets/products.json";
 
 export default {
-  name: 'VueJSProductListDemo',
+  name: "VueJSProductListDemo",
   data: () => {
     return {
-      products: [fetchedProducts.items]
+      products: fetchedProducts.items
     };
   },
   components: {
-    SingleProduct,
+    SingleProduct
     // HelloWorld
   }
-}
+};
 </script>
 
 <style>

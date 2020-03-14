@@ -1,23 +1,22 @@
 <template>
-  <div id="product-list">
-  <h1>TEST</h1>
-
-  {{productList}}
-
-  <ul>
-    <li v-for="item of productList" v-bind:key="item">
-      {{item}}
-    </li>
-  </ul>
-
+  <div class="product">
+    <h1>TEST</h1>
+    {{product.ItemName}}
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'SingleProduct',
-  props: ['productList'],
+  name: "SingleProduct",
+  props: {
+    product: {
+      ItemId: Number,
+      ItemName: String,
+      Description: String,
+      Dimensions: String,
+      BasePrice: Number
+    }
+  }
   // data: ()=> {
   //   return this.products;
   //   // return this.products = fetchedProducts.items;
@@ -29,5 +28,5 @@ export default {
   // getProducts: () => {
   //   this.products = products;
   // }
-}
+};
 </script>
