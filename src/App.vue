@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-
-    <ListView />
+    
+    <SingleProduct v-bind:productList="products" />
 
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -10,12 +10,18 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import ListView from "./components/ListView";
+import SingleProduct from "./components/ListView";
+import fetchedProducts from "./assets/products.json";
 
 export default {
-  name: 'App',
+  name: 'VueJSProductListDemo',
+  data: () => {
+    return {
+      products: [fetchedProducts.items]
+    };
+  },
   components: {
-    ListView
+    SingleProduct,
     // HelloWorld
   }
 }
