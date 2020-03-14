@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <div id="product-list">
-      <SingleProduct
-        v-for="item of products"
-        v-bind:key="item.ItemName"
-        v-bind:product="item"
-        v-model="selectedProduct"
-        @updateSelectedProduct="select"
-      />
+      <h1>Product List</h1>
+      <div id="item-list">
+        <SingleProduct
+          v-for="item of products"
+          v-bind:key="item.ItemName"
+          v-bind:product="item"
+          @updateSelectedProduct="select"
+        />
+      </div>
     </div>
     <div id="detail-view">
-      <h1>DETAIL VIEW</h1>
+      <h1>Detail View</h1>
       <div id="selected-product">
         <div v-if="selectedProduct">
           {{selectedProduct.ItemName}}
@@ -19,6 +21,10 @@
           <span>NO SELECTED PRODUCT</span>
         </div>
       </div>
+    </div>
+    <div id="sales-rep-info">
+      <hr>
+      <span>{{salesRep.SalesRepID}}</span>
     </div>
   </div>
 </template>
@@ -31,8 +37,11 @@ export default {
   name: "VueJSProductListDemo",
   data: () => {
     return {
-      products: fetchedProducts.items,
-      selectedProduct: undefined
+      manufacturerId:   fetchedProducts.ManufacturerId,
+      companyName:      fetchedProducts.CompanyName,
+      salesRep:         fetchedProducts.SalesRep,
+      products:         fetchedProducts.items,
+      selectedProduct:  undefined
     };
   },
   components: {
@@ -51,19 +60,36 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 50px;
 }
 
 #product-list {
+  width: 70%;
+  /* display: flex; */
   float: left;
-  width: 50%;
+}
+
+#item-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  width: 30%;
+  text-align: center;
 }
 
 #detail-view {
   float: right;
-  width: 50%;
+  width: 30%;
+}
+
+#sales-rep-info {
+  clear: both;
 }
 
 </style>

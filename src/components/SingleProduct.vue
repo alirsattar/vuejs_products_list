@@ -1,9 +1,7 @@
 <template>
-  <div class="product">
-    <span
-    @click="updateSelectedProduct"
-    >{{product.ItemName}}
-    </span>
+  <div class="product" @click="updateSelectedProduct">
+    <img :src="getProductImgSrc" alt="">
+    <span class="item-name">{{product.ItemName}}</span>
   </div>
 </template>
 
@@ -21,8 +19,13 @@ export default {
   },
   methods: {
     updateSelectedProduct() {
-      this.$emit('updateSelectedProduct', this.product)
+      this.$emit("updateSelectedProduct", this.product);
     }
+  },
+  computed: {
+    getProductImgSrc: function() {
+      return `${this.product.PhotoName}?width=300&height=300`;
+    },
   }
 };
 </script>
