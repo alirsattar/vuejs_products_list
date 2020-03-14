@@ -1,7 +1,9 @@
 <template>
   <div class="product">
-    <h1>TEST</h1>
-    {{product.ItemName}}
+    <span
+    @click="updateSelectedProduct"
+    >{{product.ItemName}}
+    </span>
   </div>
 </template>
 
@@ -16,17 +18,11 @@ export default {
       Dimensions: String,
       BasePrice: Number
     }
+  },
+  methods: {
+    updateSelectedProduct() {
+      this.$emit('updateSelectedProduct', this.product)
+    }
   }
-  // data: ()=> {
-  //   return this.products;
-  //   // return this.products = fetchedProducts.items;
-  // },
-  // beforeMount: ()=> {
-  //   return this.products = fetchedProducts.items;
-  // }
-
-  // getProducts: () => {
-  //   this.products = products;
-  // }
 };
 </script>
