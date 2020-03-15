@@ -1,8 +1,7 @@
 <template>
   <div id="manufacturer-info">
     <h1>Manufacturer Info</h1>
-    <hr>
-    <p>{{companyName}}</p>
+    <p>Manufacturer: {{companyName}}</p>
     <img :src="getImgSrc">
   </div>
 </template>

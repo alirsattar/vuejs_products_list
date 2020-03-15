@@ -9,11 +9,10 @@
         v-bind:companyName="companyName"
       />
 
-      <div id="sales-rep-info">
-        <h1>Sales Rep Info</h1>
-        <hr>
-        <span>{{salesRep.SalesRepID}}</span>
-      </div>
+      <!-- Sales Rep Info -->
+      <SalesRepInfo
+        v-bind:salesRepInfo="salesRep"
+      />
     </div>
 
     <div id="middle-column">
@@ -42,6 +41,7 @@
 import ProductThumbnail from "./components/ProductThumbnail";
 import ProductDetail from "./components/ProductDetail";
 import ManufacturerInfo from "./components/ManufacturerInfo";
+import SalesRepInfo from "./components/SalesRepInfo";
 
 import fetchedProducts from "./assets/products.json";
 
@@ -59,7 +59,8 @@ export default {
   components: {
     ProductThumbnail,
     ProductDetail,
-    ManufacturerInfo
+    ManufacturerInfo,
+    SalesRepInfo
   },
   methods: {
     select(item) {
