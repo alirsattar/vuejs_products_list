@@ -2,6 +2,9 @@
   <div id="selected-product">
     <h1>Detail View</h1>
     <div v-if="product">
+
+      <img :src="getProductImgSrc" alt="">
+
       <table id="product-info-table">
         <tr>
           <td>ID:</td>
@@ -39,6 +42,12 @@ export default {
   name: "ProductThumbnail",
   props: {
     product: Object
+  },
+  computed: {
+    // Repeated this function in a few places; in production code would refactor to a shared method
+    getProductImgSrc: function() {
+      return `${this.product.PhotoName}?width=500&height=500`;
+    }
   }
 };
 </script>

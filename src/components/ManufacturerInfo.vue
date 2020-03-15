@@ -14,6 +14,7 @@ export default {
     companyName:    String
   },
   computed: {
+    // Repeated this function in a few places; in production code would refactor to a shared method
     getImgSrc: function() {
       return `http://images.repzio.com/productimages/${this.manufacturerId}/logo${this.manufacturerId}_lg.jpg?width=200`;
     }

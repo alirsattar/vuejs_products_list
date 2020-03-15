@@ -25,6 +25,7 @@ export default {
     }
   },
   computed: {
+    // Repeated this function in a few places; in production code would refactor to a shared method
     getProductImgSrc: function() {
       return `${this.product.PhotoName}?width=300&height=300`;
     }

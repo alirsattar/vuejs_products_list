@@ -115,10 +115,6 @@ export default {
 }
 
 @media only screen and (max-width: 1100px) {
-  body {
-    background-color: lightblue;
-  }
-
   #app {
     display: inline;
   }
