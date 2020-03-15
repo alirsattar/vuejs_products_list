@@ -2,7 +2,7 @@
   <div class="product" @click="updateSelectedProduct">
     <a href="#selected-product">
       <img :src="getProductImgSrc" alt />
-      <span class="item-name">{{product.ItemName}}</span>
+      <br><span class="item-name">{{product.ItemName}}</span>
     </a>
   </div>
 </template>
@@ -12,11 +12,11 @@ export default {
   name: "ProductThumbnail",
   props: {
     product: {
-      ItemId: Number,
-      ItemName: String,
-      Description: String,
-      Dimensions: String,
-      BasePrice: Number
+      ItemId:       Number,
+      ItemName:     String,
+      Description:  String,
+      Dimensions:   String,
+      BasePrice:    Number
     }
   },
   methods: {
@@ -31,3 +31,30 @@ export default {
   }
 };
 </script>
+
+<style>
+.product {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px;
+  width: 30%;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .product {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+}
+</style>

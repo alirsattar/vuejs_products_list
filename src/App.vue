@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-
-    <div id="left-column">
-
-      <!-- Manufacturer Info -->
+    <div id="left" class="column">
       <ManufacturerInfo
         v-bind:manufacturerId="manufacturerId"
         v-bind:companyName="companyName"
       />
 
-      <!-- Sales Rep Info -->
       <SalesRepInfo
         v-bind:salesRepInfo="salesRep"
       />
     </div>
 
-    <div id="middle-column">
+    <div id="middle" class="column">
       <div id="product-list">
         <h1>Product List</h1>
-        <hr>
         <div id="item-list">
           <ProductThumbnail
             v-for="item of products"
@@ -30,20 +25,21 @@
       </div>
     </div>
 
-    <div id="right-column">
-      <ProductDetail v-bind:product="selectedProduct" />
+    <div id="right" class="column">
+      <ProductDetail
+        v-bind:product="selectedProduct"
+      />
     </div>
-
   </div>
 </template>
 
 <script>
 import ProductThumbnail from "./components/ProductThumbnail";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail    from "./components/ProductDetail";
 import ManufacturerInfo from "./components/ManufacturerInfo";
-import SalesRepInfo from "./components/SalesRepInfo";
+import SalesRepInfo     from "./components/SalesRepInfo";
 
-import fetchedProducts from "./assets/products.json";
+import fetchedProducts  from "./assets/products.json";
 
 export default {
   name: "VueJSProductListDemo",
@@ -75,44 +71,51 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 50px;
+  /* margin: 50px; */
   display: flex;
+  align-content: space-between;
 }
 
-#left-column {
-  width: 25%;
+#left {
+  width: 20%;
 }
 
-#middle-column {
-  width: 50%;
+#middle {
+  width: 60%;
 }
 
-#right-column {
-  width: 25%;
+#right {
+  width: 20%;
 }
 
 #product-list {
-  /* width: 70%; */
-  float: left;
+  margin: 0 auto;
 }
 
 #item-list {
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
 }
 
-.product {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 5px;
-  width: 30%;
-  text-align: center;
+.column {
+  margin: 0 20px;
 }
 
-#selected-product {
-  float: right;
-  /* width: 30%; */
+@media only screen and (max-width: 1100px) {
+  body {
+    background-color: lightblue;
+  }
+
+  #app {
+    display: inline;
+  }
+
+  #left,
+  #middle,
+  #right {
+    width: 100%;
+  }
 }
 
 #sales-rep-info {

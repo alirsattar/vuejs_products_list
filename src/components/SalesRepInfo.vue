@@ -12,9 +12,9 @@ export default {
   name: 'SalesRepInfo',
   props: {
     salesRepInfo: {
-      FirstName: String,
-      LastName: String,
-      SalesRepID: Number,
+      FirstName:    String,
+      LastName:     String,
+      SalesRepID:   Number,
       EmailAddress: String
     }
   },
@@ -25,7 +25,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

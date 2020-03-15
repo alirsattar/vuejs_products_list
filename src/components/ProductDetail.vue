@@ -44,12 +44,15 @@ export default {
 </script>
 
 <style>
-#selected-product {
-  /* width: 100%; */
-}
 
 #product-info-table * {
   text-align: left;
   vertical-align: top;
+}
+
+@media only screen and (max-width: 1100px) {
+  #selected-product {
+    max-width: 75%;
+  }
 }
 </style>

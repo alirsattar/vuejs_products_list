@@ -11,7 +11,7 @@ export default {
   name: "ManufacturerInfo",
   props: {
     manufacturerId: String,
-    companyName: String
+    companyName:    String
   },
   computed: {
     getImgSrc: function() {
@@ -22,5 +22,9 @@ export default {
 </script>
 
 <style>
+
+img {
+  max-width: 100%;
+}
 
 </style>
