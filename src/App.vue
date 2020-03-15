@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    
-    <div id="product-list">
-      <h1>Product List</h1>
-      <div id="item-list">
-        <ProductThumbnail
-          v-for="item of products"
-          v-bind:key="item.ItemName"
-          v-bind:product="item"
-          @updateSelectedProduct="select"
-        />
+
+    <div id="left-column">
+
+      <!-- Manufacturer Info -->
+      <ManufacturerInfo
+        v-bind:manufacturerId="manufacturerId"
+        v-bind:companyName="companyName"
+      />
+
+      <div id="sales-rep-info">
+        <h1>Sales Rep Info</h1>
+        <hr>
+        <span>{{salesRep.SalesRepID}}</span>
       </div>
     </div>
-    
-    <ProductDetail
-      v-bind:product="selectedProduct"
-    />
-  
-    <div id="sales-rep-info">
-      <hr>
-      <span>{{salesRep.SalesRepID}}</span>
+
+    <div id="middle-column">
+      <div id="product-list">
+        <h1>Product List</h1>
+        <hr>
+        <div id="item-list">
+          <ProductThumbnail
+            v-for="item of products"
+            v-bind:key="item.ItemName"
+            v-bind:product="item"
+            @updateSelectedProduct="select"
+          />
+        </div>
+      </div>
     </div>
+
+    <div id="right-column">
+      <ProductDetail v-bind:product="selectedProduct" />
+    </div>
+
   </div>
 </template>
 
 <script>
 import ProductThumbnail from "./components/ProductThumbnail";
 import ProductDetail from "./components/ProductDetail";
+import ManufacturerInfo from "./components/ManufacturerInfo";
 
 import fetchedProducts from "./assets/products.json";
 
@@ -34,7 +49,7 @@ export default {
   name: "VueJSProductListDemo",
   data: () => {
     return {
-      manufacturerId:   fetchedProducts.ManufacturerId,
+      manufacturerId:   fetchedProducts.ManufacturerID,
       companyName:      fetchedProducts.CompanyName,
       salesRep:         fetchedProducts.SalesRep,
       products:         fetchedProducts.items,
@@ -43,7 +58,8 @@ export default {
   },
   components: {
     ProductThumbnail,
-    ProductDetail
+    ProductDetail,
+    ManufacturerInfo
   },
   methods: {
     select(item) {
@@ -59,10 +75,23 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 50px;
+  display: flex;
+}
+
+#left-column {
+  width: 25%;
+}
+
+#middle-column {
+  width: 50%;
+}
+
+#right-column {
+  width: 25%;
 }
 
 #product-list {
-  width: 70%;
+  /* width: 70%; */
   float: left;
 }
 
@@ -82,11 +111,10 @@ export default {
 
 #selected-product {
   float: right;
-  width: 30%;
+  /* width: 30%; */
 }
 
 #sales-rep-info {
   clear: both;
 }
-
 </style>
