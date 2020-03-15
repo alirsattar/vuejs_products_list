@@ -1,15 +1,22 @@
 <template>
   <div id="app">
     <div id="left" class="column">
+      
+      <!-- Manufacturer Info Component -->
       <ManufacturerInfo
         v-bind:manufacturerId="manufacturerId"
         v-bind:companyName="companyName"
       />
 
+      <!-- Sales Rep Info Component -->
       <SalesRepInfo
         v-bind:salesRepInfo="salesRep"
       />
     </div>
+
+    <!-- Product List Component -->
+    <!-- (Normally would make this a list container component + individual ListItem components,
+          but didn't here for the sake of time! -->
 
     <div id="middle" class="column">
       <div id="product-list">
@@ -26,6 +33,11 @@
     </div>
 
     <div id="right" class="column">
+
+      <!-- Single Product Detail Component -->
+      <!-- Normally would implement this in a much more user-friendly way, probably using VueRouter to get to component,
+           but tried to wrap up demo quickly! -->
+
       <ProductDetail
         v-bind:product="selectedProduct"
       />
