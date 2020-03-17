@@ -8,7 +8,13 @@
         :src="logoUrl"
       >
 
-      <br><strong>{{ fullName }} - <span>{{ (salesRepInfo.EmailAddress).charAt(0).toUpperCase() + salesRepInfo.EmailAddress.slice(1) }}</span></strong>
+      <br>
+        <strong>
+          {{ fullName }} -
+          <span>
+            {{ (salesRepInfo.EmailAddress).charAt(0).toUpperCase() + salesRepInfo.EmailAddress.slice(1) }}
+          </span>
+        </strong>
     </div>
 
     <div v-else>
@@ -43,21 +49,20 @@ export default {
 <style>
 
 @media screen and (max-width: 700px){
-  
-
   #manufacturer-logo {
-    width: 35vw;
+    width: 30vw;
   }
-
 }
 
 #sales-rep-info {
   width: 100%;
   color: #555555;
-  font-weight: 500;
   font-size: 1.25em;
+  background-color: white;
+  padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0 0px 10px #d4d4d4
+  margin-bottom: 10px;
+  box-shadow: 0 0px 3px rgba(0,0,0, .5);
 }
 
 </style>

@@ -93,31 +93,31 @@ export default {
 
 <style>
 
+/* @font-face {
+  font-family: 'Avenir';
+  src: url('./assets/AvenirLTStd-Roman.otf');
+} */
+
 body {
   margin: 0 auto;
+  background-color: #f5f5f5;
 }
 
 #app {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir Black','Roboto', Helvetica, Arial, sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #555555;
 }
 
 #header {
-  
+  overflow-y: auto;
 }
 
-#left {
-  width: 20%;
-}
-
-#middle {
-  width: 60%;
-}
-
-#right {
-  width: 20%;
+#body {
+  overflow-y: auto;
 }
 
 #product-list {
