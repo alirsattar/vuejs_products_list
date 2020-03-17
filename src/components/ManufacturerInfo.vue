@@ -2,7 +2,7 @@
   <div id="manufacturer-info">
     <h1>Manufacturer Info</h1>
     <p>Manufacturer: {{companyName}}</p>
-    <img :src="getImgSrc">
+    <img :src="this.$props.logoUrl">
   </div>
 </template>
 
@@ -11,13 +11,8 @@ export default {
   name: "ManufacturerInfo",
   props: {
     manufacturerId: String,
+    logoUrl:        String,
     companyName:    String
-  },
-  computed: {
-    // Repeated this function in a few places; in production code would refactor to a shared method
-    getImgSrc: function() {
-      return `http://images.repzio.com/productimages/${this.manufacturerId}/logo${this.manufacturerId}_lg.jpg?width=200`;
-    }
   }
 };
 </script>

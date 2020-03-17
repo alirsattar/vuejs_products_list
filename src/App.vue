@@ -1,24 +1,27 @@
 <template>
   <div id="app">
-    <div id="left" class="column">
+
+    <div id="top">
       
+      <!-- Header Component -->
+      <SalesRepInfo
+        v-bind:salesRepInfo="salesRep"
+        v-bind:logoUrl="logoUrl"
+        context="header"
+      />
+
       <!-- Manufacturer Info Component -->
       <ManufacturerInfo
         v-bind:manufacturerId="manufacturerId"
         v-bind:companyName="companyName"
+        v-bind:logoUrl="logoUrl"
       />
 
-      <!-- Sales Rep Info Component -->
-      <SalesRepInfo
-        v-bind:salesRepInfo="salesRep"
-      />
     </div>
 
-    <!-- Product List Component -->
-    <!-- (Normally would make this a list container component + individual ListItem components,
-          but didn't here for the sake of time! -->
+    <div id="middle">
 
-    <div id="middle" class="column">
+      <!-- Product List Component -->
       <div id="product-list">
         <h1>Product List</h1>
         <div id="item-list">
@@ -30,18 +33,22 @@
           />
         </div>
       </div>
+
     </div>
 
-    <div id="right" class="column">
+    <div id="bottom">
 
-      <!-- Single Product Detail Component -->
-      <!-- Normally would implement this in a much more user-friendly way, probably using VueRouter to get to component,
-           but tried to wrap up demo quickly! -->
+      <!-- Footer Component -->
+      <SalesRepInfo
+        v-bind:salesRepInfo="salesRep"
+        context="footer"
+      />
+
+    </div>
 
       <ProductDetail
         v-bind:product="selectedProduct"
       />
-    </div>
   </div>
 </template>
 
@@ -57,11 +64,12 @@ export default {
   name: "VueJSProductListDemo",
   data: () => {
     return {
-      manufacturerId:   fetchedProducts.ManufacturerID,
-      companyName:      fetchedProducts.CompanyName,
-      salesRep:         fetchedProducts.SalesRep,
-      products:         fetchedProducts.items,
-      selectedProduct:  undefined
+      manufacturerId:       fetchedProducts.ManufacturerID,
+      manufacturerLogoUrl:  '',
+      companyName:          fetchedProducts.CompanyName,
+      salesRep:             fetchedProducts.SalesRep,
+      products:             fetchedProducts.items,
+      selectedProduct:      undefined
     };
   },
   components: {
@@ -74,6 +82,11 @@ export default {
     select(item) {
       this.$data.selectedProduct = item;
     }
+  },
+  computed: {
+    logoUrl: function() {
+      return `http://images.repzio.com/productimages/${this.manufacturerId}/logo${this.manufacturerId}_lg.jpg?width=200`;
+    }
   }
 };
 </script>
@@ -83,9 +96,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* margin: 50px; */
-  display: flex;
-  align-content: space-between;
+  text-align: center;
 }
 
 #left {
