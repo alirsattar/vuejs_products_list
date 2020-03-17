@@ -1,7 +1,7 @@
 <template>
   <div id="manufacturer-info">
-    <h1>Manufacturer Info</h1>
-    <p>Manufacturer: {{companyName}}</p>
+    <!-- <h1>Manufacturer Info</h1> -->
+    <h1>{{companyName}}</h1>
     <img :src="this.$props.logoUrl">
   </div>
 </template>
@@ -18,6 +18,10 @@ export default {
 </script>
 
 <style>
+
+#manufacturer-info {
+  background-color: #f5f5f5;
+}
 
 img {
   max-width: 100%;

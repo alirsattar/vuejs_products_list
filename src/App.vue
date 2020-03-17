@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <div id="top">
+    <div id="header">
       
       <!-- Header Component -->
       <SalesRepInfo
@@ -10,16 +10,16 @@
         context="header"
       />
 
+    </div>
+
+    <div id="body">
+
       <!-- Manufacturer Info Component -->
       <ManufacturerInfo
         v-bind:manufacturerId="manufacturerId"
         v-bind:companyName="companyName"
         v-bind:logoUrl="logoUrl"
       />
-
-    </div>
-
-    <div id="middle">
 
       <!-- Product List Component -->
       <div id="product-list">
@@ -36,7 +36,7 @@
 
     </div>
 
-    <div id="bottom">
+    <div id="footer">
 
       <!-- Footer Component -->
       <SalesRepInfo
@@ -92,11 +92,20 @@ export default {
 </script>
 
 <style>
+
+body {
+  margin: 0 auto;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+#header {
+  
 }
 
 #left {
