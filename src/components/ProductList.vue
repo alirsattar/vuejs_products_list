@@ -21,11 +21,11 @@ export default {
     products: Array
   },
   methods: {
-    updateSelectedProduct: (clickedProduct)=> {
+    updateSelectedProduct: function(clickedProduct) {
       this.$emit('clickedOnProduct', clickedProduct);
     },
     getProductImgSrc: function(product) {
-      return `${product.PhotoName}?width=300&height=300`;
+      return `${product.PhotoName}?width=800&height=600&scale=canvas`;
     }
   },
   components: {

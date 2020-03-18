@@ -1,7 +1,9 @@
 <template>
   <div class="product" @click="clickedItem">
     <a href="#selected-product">
-      <img :src="imgSrc"/>
+      <div class="thumbnail-container">
+        <img class="thumbnail" :src="imgSrc"/>
+      </div>
       <br><span class="item-name">{{product.ItemName}}</span>
     </a>
   </div>
@@ -30,16 +32,18 @@ export default {
 
 <style>
 .product {
-  border: 1px solid black;
-  border-radius: 5px;
   margin: 3px;
   padding: 5px;
-  width: 30%;
+  /* width: 30%; */
   text-align: center;
 }
 
-.product img {
-  max-width: 100%;
+.thumbnail-container {
+  background-color: white;
+}
+
+.thumbnail {
+  padding: 20px 0;
 }
 
 @media only screen and (max-width: 800px) {

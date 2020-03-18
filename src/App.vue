@@ -25,19 +25,8 @@
       <!-- Product List Component -->
       <ProductList
         v-bind:products="products"
+        @clickedOnProduct="select"
       />
-
-      <!-- <div id="product-list">
-        <h1>Product List</h1>
-        <div id="item-list">
-          <ProductThumbnail
-            v-for="item of products"
-            v-bind:key="item.ItemName"
-            v-bind:product="item"
-            @updateSelectedProduct="select"
-          />
-        </div>
-      </div> -->
 
     </div>
 
@@ -86,6 +75,7 @@ export default {
   },
   methods: {
     select(item) {
+      console.warn('APP.VUE SELECT FIRED', item);
       this.$data.selectedProduct = item;
     }
   },
