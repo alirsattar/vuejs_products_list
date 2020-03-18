@@ -39,9 +39,14 @@
 
 <script>
 export default {
-  name: "ProductThumbnail",
+  name: "ProductDetail",
   props: {
     product: Object
+  },
+  created() {
+    if(this.$route.query.product) {
+        this.product = this.$route.query.product;
+    }
   },
   computed: {
     // Repeated this function in a few places; in production code would refactor to a shared method

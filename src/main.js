@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import App from './App.vue';
 import ProductDetail from './components/ProductDetail';
+import Main from './components/Main';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
@@ -10,7 +11,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: App
+    component: Main
   },
   {
     path: '/detail',
