@@ -1,7 +1,6 @@
 <template>
-  <div id="selected-product">
-    
-    <table>
+  <div id="selected-product">    
+    <table id="breadcrumb">
       <tr>
         <td>
           <router-link to="/">
@@ -19,9 +18,11 @@
       </tr>
     </table>
 
-    <div v-if="product">
+    <div id="product-container" v-if="product">
 
-      <img :src="getProductImgSrc" alt="">
+      <div id="product-image-container">
+        <img id="product-img" :src="getProductImgSrc">
+      </div>
 
       <div id="detail-text">
         <h2 id="detail-name">{{product.ItemName}}</h2>
@@ -55,21 +56,86 @@ export default {
   computed: {
     // Repeated this function in a few places; in production code would refactor to a shared method
     getProductImgSrc: function() {
-      return `${this.product.PhotoName}?width=500&height=500`;
+      return `${this.product.PhotoName}?width=800&height=600&scale=canvas`;
     }
   }
 };
 </script>
 
 <style>
-#detail-text {
-  margin: 0 .4rem;
+@media (max-width: 600px) {
+  #selected-product {
+    margin: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  #selected-product {
+    margin: 0 100px;
+  }
+
+  #breadcrumb * {
+    font-size: 1.5rem;
+  }
+
+  #detail-name {
+    margin-top: 0;
+  }
+
+  #detail-text {
+    text-align: left;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 800px) {
+  #product-image-container {
+    max-width: 50%;
+    scale: 100%;
+  }
+  
+  #product-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  
+  #detail-text {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #selected-product {
+    margin: 0 150px;
+  }
+
+  #detail-text {
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #selected-product {
+    margin: 0 300px;
+  }
+
+  #detail-text {
+    margin-left: 5rem;
+  }
+}
+
+#product-img {
+  box-shadow: 1px 1px 5px rgba(0,0,0, .10);
+}
+
+#product-container {
+  margin-bottom: 5rem;
 }
 
 #selected-product {
   text-align: center;
   font-family: 'Avenir';
-  margin: 0;
 }
 
 #selected-product a {
@@ -115,6 +181,6 @@ export default {
 
 #detail-dimensions {
   font-size: 1.35rem;
-  margin: 1.75rem 1.75rem 3rem 1.75rem;
+  margin: 1.75rem 0 0;
 }
 </style>
