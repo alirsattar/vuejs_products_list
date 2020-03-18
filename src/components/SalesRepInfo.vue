@@ -1,12 +1,12 @@
 <template>
   <div id="sales-rep-info" :class="context">
-    <div v-if="context === 'header'">
+    <div id="top-banner" v-if="context === 'header'">
       <img
-        id="manufacturer-logo"
+        id="banner-logo"
         :src="logoUrl"
       >
       <br>
-        <strong>
+        <strong id="banner-salesrep">
           {{ fullName }} -
           <span>
             {{ (salesRepInfo.EmailAddress).charAt(0).toUpperCase() + salesRepInfo.EmailAddress.slice(1) }}
@@ -58,6 +58,25 @@ export default {
 @media screen and (max-width: 700px){
   #manufacturer-logo {
     width: 30vw;
+  }
+}
+
+@media (min-width: 800px) {
+  #top-banner {
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #banner-logo {
+    float: left;
+    height: 8rem;
+  }
+
+  #banner-salesrep {
+    float: right;
+    font-size: 2rem;
   }
 }
 

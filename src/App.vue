@@ -1,14 +1,12 @@
 <template>
   <div id="app">
     <div id="header">
-      
       <!-- Header Component -->
       <SalesRepInfo
         v-bind:salesRepInfo="salesRep"
         v-bind:logoUrl="logoUrl"
         context="header"
       />
-
     </div>
 
     <div id="body">
@@ -76,6 +74,16 @@ export default {
 </script>
 
 <style>
+@media (max-width: 600px) {
+  #app {
+    display: inline;
+  }
+
+  #header {
+    display: inline;
+    background-color: red;
+  }
+}
 
 body {
   margin: 0 auto;
@@ -93,36 +101,16 @@ body {
 
 #header {
   overflow-y: auto;
+  /* display: flex; */
+  width: 100%;
 }
 
 #body {
   overflow-y: auto;
 }
 
-#product-list {
-  margin: 0 auto;
-}
-
-#item-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-
 .column {
   margin: 0 20px;
-}
-
-@media only screen and (max-width: 1100px) {
-  #app {
-    display: inline;
-  }
-
-  #left,
-  #middle,
-  #right {
-    width: 100%;
-  }
 }
 
 .break {
