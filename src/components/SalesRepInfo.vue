@@ -85,6 +85,10 @@ export default {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0 0px 3px rgba(0,0,0, .5);
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 10rem;
 }
 
 #sales-rep-info.header {

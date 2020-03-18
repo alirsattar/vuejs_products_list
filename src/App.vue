@@ -83,6 +83,16 @@ export default {
     display: inline;
     background-color: red;
   }
+
+  #body {
+    padding-top: 10rem;
+  }
+}
+
+@media (min-width: 600px) {
+  #body {
+    margin-top: 10rem;
+  }
 }
 
 body {
