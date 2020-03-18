@@ -23,7 +23,11 @@
       />
 
       <!-- Product List Component -->
-      <div id="product-list">
+      <ProductList
+        v-bind:products="products"
+      />
+
+      <!-- <div id="product-list">
         <h1>Product List</h1>
         <div id="item-list">
           <ProductThumbnail
@@ -33,7 +37,7 @@
             @updateSelectedProduct="select"
           />
         </div>
-      </div>
+      </div> -->
 
     </div>
 
@@ -54,7 +58,7 @@
 </template>
 
 <script>
-import ProductThumbnail from "./components/ProductThumbnail";
+import ProductList      from "./components/ProductList";
 import ProductDetail    from "./components/ProductDetail";
 import ManufacturerInfo from "./components/ManufacturerInfo";
 import SalesRepInfo     from "./components/SalesRepInfo";
@@ -75,7 +79,7 @@ export default {
     };
   },
   components: {
-    ProductThumbnail,
+    ProductList,
     ProductDetail,
     ManufacturerInfo,
     SalesRepInfo

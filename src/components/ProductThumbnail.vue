@@ -1,7 +1,7 @@
 <template>
-  <div class="product" @click="updateSelectedProduct">
+  <div class="product" @click="clickedItem">
     <a href="#selected-product">
-      <img :src="getProductImgSrc" alt />
+      <img :src="imgSrc"/>
       <br><span class="item-name">{{product.ItemName}}</span>
     </a>
   </div>
@@ -17,17 +17,12 @@ export default {
       Description:  String,
       Dimensions:   String,
       BasePrice:    Number
-    }
+    },
+    imgSrc:         String
   },
   methods: {
-    updateSelectedProduct() {
-      this.$emit("updateSelectedProduct", this.product);
-    }
-  },
-  computed: {
-    // Repeated this function in a few places; in production code would refactor to a shared method
-    getProductImgSrc: function() {
-      return `${this.product.PhotoName}?width=300&height=300`;
+    clickedItem: function() {
+      this.$emit("clickedItem", this.product);
     }
   }
 };
