@@ -89,11 +89,6 @@ export default {
 
 <style>
 
-/* @font-face {
-  font-family: 'Avenir';
-  src: url('./assets/AvenirLTStd-Roman.otf');
-} */
-
 body {
   margin: 0 auto;
   background-color: #f5f5f5;

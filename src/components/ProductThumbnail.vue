@@ -4,7 +4,10 @@
       <div class="thumbnail-container">
         <img class="thumbnail" :src="imgSrc"/>
       </div>
-      <br><span class="item-name">{{product.ItemName}}</span>
+      <div class="item-text">
+        <h2 class="item-name">{{product.ItemName}}</h2>
+        <h2 class="item-price">$ {{(product.BasePrice).toFixed(2)}}</h2>
+      </div>
     </a>
   </div>
 </template>
@@ -32,18 +35,39 @@ export default {
 
 <style>
 .product {
-  margin: 3px;
   padding: 5px;
-  /* width: 30%; */
-  text-align: center;
+  text-align: left;
 }
 
 .thumbnail-container {
+  margin-bottom: 10px;
   background-color: white;
+  box-shadow: 1px 1px 5px rgba(0,0,0, .10);
 }
 
 .thumbnail {
   padding: 20px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product h2 {
+  margin: 0;
+  font-size: 1.60rem;
+}
+
+.item-text {
+  padding: 0 5px;
+  margin-bottom: 35px;
+}
+
+.item-price {
+  font-family: 'Avenir';
+  font-weight: lighter;
+  color: #888888;
 }
 
 @media only screen and (max-width: 800px) {
