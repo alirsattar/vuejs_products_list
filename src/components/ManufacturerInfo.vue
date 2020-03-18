@@ -23,9 +23,31 @@ export default {
 </script>
 
 <style>
+@media (min-width: 800px) {
+  #manufacturer-name {
+    font-size: 4rem;
+  }
+
+  #manufacturer-info .break {
+    width: 6rem;
+  }
+
+  #message p {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #manufacturer-name {
+    font-size: 2.5rem;
+  }
+  
+  #manufacturer-info .break {
+    width: 1rem;
+  }
+}
 
 #manufacturer-name {
-  font-size: 2.5rem;
   margin-top: 15px;
 }
 

@@ -117,8 +117,4 @@ export default {
   font-size: 1.35rem;
   margin: 1.75rem 1.75rem 3rem 1.75rem;
 }
-
-@media only screen and (max-width: 1100px) {
-
-}
 </style>
