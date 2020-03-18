@@ -36,4 +36,8 @@ export default {
 
 <style>
 
+#item-list {
+  margin-bottom: 40px;
+}
+
 </style>

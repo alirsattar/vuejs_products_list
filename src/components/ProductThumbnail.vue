@@ -40,13 +40,15 @@ export default {
 }
 
 .thumbnail-container {
+  text-align: center;
   margin-bottom: 10px;
   background-color: white;
   box-shadow: 1px 1px 5px rgba(0,0,0, .10);
 }
 
 .thumbnail {
-  padding: 20px 0;
+  padding: 30px 0;
+  max-width: 80%;
 }
 
 a {

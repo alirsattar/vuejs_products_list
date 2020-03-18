@@ -138,6 +138,12 @@ body {
 }
 
 #sales-rep-info {
-  clear: both;
+  /* clear: both; */
+}
+
+.break {
+  width: 1rem;
+  border: 1px solid #898989;
+  margin: 10px auto;
 }
 </style>
