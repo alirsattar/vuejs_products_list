@@ -1,6 +1,9 @@
 <template>
-  <div class="product" @click="clickedItem">
-    <a href="#selected-product">
+  <div class="product"
+  
+  >
+    <!-- <a href="#selected-product"> -->
+    <router-link to="/detail">
       <div class="thumbnail-container">
         <img class="thumbnail" :src="imgSrc"/>
       </div>
@@ -8,7 +11,8 @@
         <h2 class="item-name">{{product.ItemName}}</h2>
         <h2 class="item-price">$ {{(product.BasePrice).toFixed(2)}}</h2>
       </div>
-    </a>
+    </router-link>
+    <!-- </a> -->
   </div>
 </template>
 
@@ -51,10 +55,10 @@ export default {
   max-width: 80%;
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 .product h2 {
   margin: 0;

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <div id="header">
       
       <!-- Header Component -->
@@ -40,15 +39,18 @@
 
     </div>
 
-      <ProductDetail
+    <router-view></router-view>
+
+      <!-- <ProductDetail
         v-bind:product="selectedProduct"
-      />
+      /> -->
   </div>
 </template>
 
 <script>
+
 import ProductList      from "./components/ProductList";
-import ProductDetail    from "./components/ProductDetail";
+// import ProductDetail    from "./components/ProductDetail";
 import ManufacturerInfo from "./components/ManufacturerInfo";
 import SalesRepInfo     from "./components/SalesRepInfo";
 
@@ -69,7 +71,7 @@ export default {
   },
   components: {
     ProductList,
-    ProductDetail,
+    // ProductDetail,
     ManufacturerInfo,
     SalesRepInfo
   },
