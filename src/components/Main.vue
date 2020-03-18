@@ -1,56 +1,15 @@
 <template>
-  <div id="app">
-    <div id="header">
-      
-      <!-- Header Component -->
-      <SalesRepInfo
-        v-bind:salesRepInfo="salesRep"
-        v-bind:logoUrl="logoUrl"
-        context="header"
-      />
-
-    </div>
-
-    <div id="body">
-
-      <!-- Manufacturer Info Component -->
-      <ManufacturerInfo
-        v-bind:manufacturerId="manufacturerId"
-        v-bind:companyName="companyName"
-        v-bind:logoUrl="logoUrl"
-        v-bind:message="message"
-      />
-
+  <div id="main">
       <!-- Product List Component -->
       <ProductList
         v-bind:products="products"
         @clickedOnProduct="select"
       />
-
     </div>
-
-    <div id="footer">
-
-      <!-- Footer Component -->
-      <SalesRepInfo
-        v-bind:salesRepInfo="salesRep"
-        context="footer"
-      />
-
-    </div>
-
-      <!-- <ProductDetail
-        v-bind:product="selectedProduct"
-      /> -->
-  </div>
 </template>
 
 <script>
-
 import ProductList      from "./ProductList";
-// import ProductDetail    from "./ProductDetail";
-import ManufacturerInfo from "./ManufacturerInfo";
-import SalesRepInfo     from "./SalesRepInfo";
 
 import fetchedProducts  from "../assets/products.json";
 
@@ -68,10 +27,7 @@ export default {
     };
   },
   components: {
-    ProductList,
-    // ProductDetail,
-    ManufacturerInfo,
-    SalesRepInfo
+    ProductList
   },
   methods: {
     select(item) {

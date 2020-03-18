@@ -3,7 +3,7 @@
   
   >
     <!-- <a href="#selected-product"> -->
-    <router-link :to="{ path: '/detail', query: { product: product } }">
+    <router-link :to="'/details/' + product.ItemID">
       <div class="thumbnail-container">
         <img class="thumbnail" :src="imgSrc"/>
       </div>
