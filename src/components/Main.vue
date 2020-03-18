@@ -45,13 +45,4 @@ export default {
 
 <style>
 
-#product-list {
-  margin: 0 auto;
-}
-
-#item-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
 </style>

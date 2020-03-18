@@ -38,6 +38,25 @@ export default {
 </script>
 
 <style>
+@media (min-width: 800px) {
+  .product {
+    width: 30%;
+    margin: 0 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product {
+    width: 22%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+}
+
 .product {
   padding: 5px;
   text-align: left;
@@ -74,17 +93,5 @@ export default {
   font-family: 'Avenir';
   font-weight: lighter;
   color: #888888;
-}
-
-@media only screen and (max-width: 800px) {
-  .product {
-    width: 40%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .product {
-    width: 100%;
-  }
 }
 </style>

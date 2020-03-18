@@ -35,8 +35,21 @@ export default {
 </script>
 
 <style>
+@media (min-width: 800px) {
+  #item-list {
+    /* justify-content: space-between; */
+    margin: 0 2rem;
+  }
+}
+
+#product-list {
+  margin: 0 auto;
+}
 
 #item-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
