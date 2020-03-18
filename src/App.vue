@@ -19,6 +19,7 @@
         v-bind:manufacturerId="manufacturerId"
         v-bind:companyName="companyName"
         v-bind:logoUrl="logoUrl"
+        v-bind:message="message"
       />
 
       <!-- Product List Component -->
@@ -69,6 +70,7 @@ export default {
       companyName:          fetchedProducts.CompanyName,
       salesRep:             fetchedProducts.SalesRep,
       products:             fetchedProducts.items,
+      message:              fetchedProducts.Message,
       selectedProduct:      undefined
     };
   },
