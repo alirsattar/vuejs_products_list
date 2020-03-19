@@ -21,18 +21,12 @@
     </div>
 
     <div id="footer">
-
       <!-- Footer Component -->
       <SalesRepInfo
         v-bind:salesRepInfo="salesRep"
         context="footer"
       />
-
     </div>
-
-      <!-- <ProductDetail
-        v-bind:product="selectedProduct"
-      /> -->
   </div>
 </template>
 
@@ -81,7 +75,11 @@ export default {
 
   #header {
     display: inline;
-    background-color: red;
+    min-height: 5rem;
+  }
+
+  #header * {
+    max-height: 50%;
   }
 
   #body {
@@ -91,7 +89,11 @@ export default {
 
 @media (min-width: 600px) {
   #body {
-    margin-top: 10rem;
+    padding-top: 10rem;
+  }
+
+  #header {    
+    height: 10rem;
   }
 }
 
@@ -111,7 +113,7 @@ body {
 
 #header {
   overflow-y: auto;
-  /* display: flex; */
+  position: fixed;
   width: 100%;
 }
 

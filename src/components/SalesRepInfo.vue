@@ -55,13 +55,27 @@ export default {
 
 <style>
 
-@media screen and (max-width: 700px){
+@media (max-width: 600px){
   #manufacturer-logo {
     width: 30vw;
   }
+
+  #banner-logo {
+    height: 5rem;
+  }
+
+  #banner-salesrep {
+    max-height: 50%;
+  }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
+  #banner-logo {
+    height: 5rem;
+  }
+}
+
+@media (min-width:  800px) {
   #top-banner {
     margin: 0 50px;
     display: flex;
@@ -71,13 +85,24 @@ export default {
 
   #banner-logo {
     float: left;
-    height: 8rem;
+    height: 5rem;
   }
 
   #banner-salesrep {
     float: right;
     font-size: 2rem;
   }
+
+  #sales-rep-info.header {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#top-banner {
+  width: 100%;
 }
 
 #sales-rep-info {
@@ -86,9 +111,6 @@ export default {
   padding-bottom: 10px;
   box-shadow: 0 0px 3px rgba(0,0,0, .5);
   background-color: white;
-  position: fixed;
-  width: 100%;
-  height: 10rem;
 }
 
 #sales-rep-info.header {
