@@ -55,7 +55,7 @@ export default {
 
 <style>
 
-@media (max-width: 600px){
+@media only screen and (max-width: 600px){
   #manufacturer-logo {
     width: 30vw;
   }
@@ -65,13 +65,18 @@ export default {
   }
 
   #banner-salesrep {
-    max-height: 50%;
+    /* max-height: 50%; */
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 600px) {
   #banner-logo {
-    height: 5rem;
+    height: 3rem;
+  }
+
+  #banner-salesrep {
+    font-size: 1rem;
   }
 }
 

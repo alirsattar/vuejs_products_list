@@ -78,10 +78,6 @@ export default {
     min-height: 5rem;
   }
 
-  #header * {
-    max-height: 50%;
-  }
-
   #body {
     padding-top: 10rem;
   }
